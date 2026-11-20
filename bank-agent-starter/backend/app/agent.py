@@ -5,7 +5,7 @@ from typing import Annotated, Literal, TypedDict
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, SystemMessage, ToolMessage
 from langchain_core.runnables import RunnableConfig
 from langchain_core.tools import tool
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
@@ -96,9 +96,9 @@ AGENT_SYSTEM_PROMPT = """You are a helpful, accurate mobile banking assistant.
 - If a transfer requires approval, clearly summarize the transfer details once confirmed or cancelled."""
 
 
-def get_llm() -> ChatOpenAI:
-    model_name = os.getenv("AGENT_MODEL", "gpt-4o-mini")
-    return ChatOpenAI(model=model_name, temperature=0, streaming=True)
+def get_llm() -> ChatGroq:
+    model_name = os.getenv("AGENT_MODEL", "openai/gpt-oss-120b")
+    return ChatGroq(model=model_name, temperature=0, streaming=True)
 
 
 def router_node(state: BankingState) -> dict:

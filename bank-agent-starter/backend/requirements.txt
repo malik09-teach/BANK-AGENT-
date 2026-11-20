@@ -6,3 +6,4 @@ langchain-openai>=0.2.0
 langgraph>=0.2.50
 pydantic>=2.7.0
 python-dotenv>=1.0.0
+lang_chaingroq
