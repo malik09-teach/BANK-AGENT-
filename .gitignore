@@ -1,0 +1,38 @@
+# ==============================================================================
+# Git Ignore - Main code only
+# Excludes dependencies, virtualenvs, cache and local secrets
+# ==============================================================================
+
+# Node / React Native / Expo Dependencies
+node_modules/
+.expo/
+.expo-shared/
+dist/
+web-build/
+
+# Python Virtual Environments & Bytecode
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment Variables & Secrets (Keep .env.example, ignore actual secrets)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System & IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
